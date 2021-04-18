@@ -24,11 +24,9 @@ namespace Task9v7
                 //Console.WriteLine($"{numberArray[i]}");
             }
 
-            double tempElem = numberArray[0];
-
             for (int i = 1; i < numberArray.Length; i++)
             {
-                if (numberArray[i] > tempElem)
+                if (numberArray[i] > numberArray[0])
                 {
                     count++;
                 }
