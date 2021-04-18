@@ -37,8 +37,48 @@ namespace Task9v7
 
             //* Дан массив вещественных чисел Z(16) . Определить разность между 
             //* суммой элементов c четными индексами и суммой элементов, индексы 
-            //*которых кратны трем.
+            //* которых кратны трем.
 
+            double[] Z = new double[16];
+            double sumOfEven = 0;
+            double sumMultiplesOfThree = 0;
+            double difference = 0;
+
+            for (int i = 0; i < Z.Length; i++)
+            {
+                Z[i] = Math.Round((rand.NextDouble() * 100), 5);
+                Console.WriteLine($"{Z[i]}");
+            }
+
+            for (int i = 0; i < Z.Length; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    sumOfEven += Z[i];
+                }
+
+                if (i % 3 == 0)
+                {
+                    sumMultiplesOfThree += Z[i];
+                }
+            }
+
+            if (sumOfEven > sumMultiplesOfThree)
+            {
+                difference = Math.Round((sumOfEven - sumMultiplesOfThree), 5);
+                Console.WriteLine($"{sumOfEven} > {sumMultiplesOfThree}");
+                Console.WriteLine($"Разность между суммой элементов с четными индексами и элементов с индексами кратные трем = {difference}");
+            }
+            else if (sumOfEven < sumMultiplesOfThree)
+            {
+                difference = Math.Round((sumMultiplesOfThree - sumOfEven), 5);
+                Console.WriteLine($"{sumOfEven} < {sumMultiplesOfThree}");
+                Console.WriteLine($"Разность между суммой элементов с четными индексами и элементов с индексами кратные трем = {difference}");
+            }
+            else
+            {
+                Console.WriteLine("Сумма элементов с четными индексами = сумме элементов с индексами кратные трем");
+            }
 
             //* Ввести массив, состоящий из 15-ти элементов (двузначные целые числа). 
             //* Изменить разрядность цифр, образующих элементы исходного массива и, 
