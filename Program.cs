@@ -84,6 +84,25 @@ namespace Task9v7
             //* Изменить разрядность цифр, образующих элементы исходного массива и, 
             //* таким образом, сформировать новый массив. Например, исходный
             //* массив: 25 71 84…, новый массив: 52 17 48….
+
+            int[] twoDigitNumberArr = new int[15];
+            int temp = 0;
+
+            for (int i = 0; i < twoDigitNumberArr.Length; i++)
+            {
+                Console.Write("Введите двузначное число(от 10 до 99): ");
+                input = Console.ReadLine();
+                temp = int.Parse(input);
+                
+                if (temp >= 10 && temp <= 99)
+                {
+                    twoDigitNumberArr[i] = temp;
+                }
+                else
+                {
+                    Console.WriteLine("Введено неправильное число");
+                }
+            }
         }
     }
 }
