@@ -89,6 +89,8 @@ namespace Task9v7
             int temp = 0;
             int units;
             int dozen;
+            int newNumber;
+            int[] newTwoDigitNumberArr = new int[15];
             Random intRandom = new Random();
 
             for (int i = 0; i < twoDigitNumberArr.Length; i++)
@@ -118,17 +120,14 @@ namespace Task9v7
                 twoDigitNumberArr[i] = intRandom.Next(10, 100);
             }
 
-            /*for (int i = 0; i < twoDigitNumberArr.Length; i++)
-            {
-                Console.Write($"{twoDigitNumberArr[i]}");
-            }*/
-
             for (int i = 0; i < twoDigitNumberArr.Length; i++)
             {
                 units = twoDigitNumberArr[i] % 10;
                 dozen = twoDigitNumberArr[i] / 10;
-                Console.Write($"{dozen} - {units}");
-                Console.WriteLine();
+                newNumber = units * 10 + dozen;
+                newTwoDigitNumberArr[i] = newNumber;
+                //Console.WriteLine($"{dozen} - {units} = {newNumber}");
+                Console.WriteLine($"{newTwoDigitNumberArr[i]}");
             }
         }
     }
