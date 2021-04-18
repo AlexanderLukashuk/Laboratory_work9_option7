@@ -90,18 +90,27 @@ namespace Task9v7
 
             for (int i = 0; i < twoDigitNumberArr.Length; i++)
             {
-                Console.Write("Введите двузначное число(от 10 до 99): ");
-                input = Console.ReadLine();
-                temp = int.Parse(input);
-                
-                if (temp >= 10 && temp <= 99)
+                if (temp < 10 || temp > 99)
                 {
-                    twoDigitNumberArr[i] = temp;
+                    while (temp < 10 || temp > 99)
+                    {
+                        Console.Write("Введите двузначное число(от 10 до 99): ");
+                        input = Console.ReadLine();
+                        temp = int.Parse(input);
+
+                        if (temp >= 10 && temp <= 99)
+                        {
+                            twoDigitNumberArr[i] = temp;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Введено неправильное число");
+                        }
+                    }
                 }
-                else
-                {
-                    Console.WriteLine("Введено неправильное число");
-                }
+                temp = 0;
+
+                Console.WriteLine($"{twoDigitNumberArr[i]}");
             }
         }
     }
